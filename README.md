@@ -1,46 +1,115 @@
-# Getting Started with Create React App
+Para rodar Back-end 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Na Pasta \cronos\cronos_api\DB\
+Possui um Dump do banco de dados 
+cronos.sql
 
-## Available Scripts
+Para Instalar a API
+\cronos\cronos_api\.env
 
-In the project directory, you can run:
+Porta que vai rodar o pedido
+PORT=4000
 
-### `npm start`
+Configurações para o banco de dados
+MYSQL_DB=cronos
+MYSQL_USER=root
+MYSQL_PASSWORD=
+MYSQL_PORT=3306
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para Rodar a Server 
+npm install
+npm run start-dev
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Métodos da API
 
-### `npm test`
+///Post
+ 
+ Para Listar os Post
+ Método : GET
+ URL : http://localhost:4000/post/lista
+ 
+ Para Inserir um Post
+ URL : http://localhost:4000/post
+ Método : POST
+ Header : Content-Type application/x-www-form-urlencoded
+ body : {post:'Nome', descricao:'descricao'}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ Para Atualizar um Post
+ Método : PUT
+ URL : http://localhost:4000/post/id
+ Header : Content-Type application/x-www-form-urlencoded
+ body : {post:'Nome', descricao:'descricao'}
+ obs: /id = ao número id do post
+ 
+ Para Deletar um Post
+ Método : DELETE
+ Post : http://localhost:4000/post/id
+ obs: /id = ao número id do post
+ 
+ 
+ ///Serviço
+ 
 
-### `npm run build`
+ Para Listar os Serviços
+ Método : GET
+ URL : http://localhost:4000/servico/lista
+ 
+ Para Inserir um Serviço
+ URL : http://localhost:4000/servico
+ Método : POST
+ Header : Content-Type application/x-www-form-urlencoded
+ body : {nome:'Nome', descricao:'descricao'}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ Para Atualizar um Serviço
+ Método : PUT
+ URL : http://localhost:4000/servico/id
+ Header : Content-Type application/x-www-form-urlencoded
+ body : {nome:'Nome', descricao:'descricao'}
+ obs: /id = ao número id do serviço
+ 
+ Para Deletar um Serviço
+ Método : DELETE
+ Post : http://localhost:4000/servico/id
+ obs: /id = ao número id do serviço
+ 
+ 
+  ///Integrantes da Equipe
+ 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ Para Listar os Integrantes da Equipe
+ Método : GET
+ URL : http://localhost:4000/intgequipe/lista
+ 
+ Para Inserir um Integrantes da Equipe
+ URL : http://localhost:4000/intgequipe
+ Método : POST
+ Header : Content-Type application/x-www-form-urlencoded
+ body : {nome:'Nome', equipe:'equipe'}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ Para Atualizar um Integrantes da Equipe
+ Método : PUT
+ URL : http://localhost:4000/intgequipe/id
+ Header : Content-Type application/x-www-form-urlencoded
+ body : {nome:'Nome', equipe:'equipe'}
+ obs: /id = ao número id do Integrantes da Equipe
+ 
+ Para Deletar um Integrantes da Equipe
+ Método : DELETE
+ Post : http://localhost:4000/intgequipe/id
+ obs: /id = ao número id do Integrantes da Equipe
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para rodar Front-End 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Altera a URL da API
+\cronos\src\api\api.tsx
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+const request = axios.create({
+  baseURL:'http://192.168.100.15:4000'
+});
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para Rodar o Site
+npm install
+npm start
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
