@@ -13,8 +13,8 @@ export const TableTeamMember = ({ list, admin, loadTeamMemberList }: Props) => {
         <ST.Table>
             <thead>
                  <tr>
-                     {admin && <ST.TableHeadColumn width={30}>ID</ST.TableHeadColumn>} 
-                     <ST.TableHeadColumn width={120}>Nome</ST.TableHeadColumn> 
+                     {admin && <ST.TableHeadColumn >ID</ST.TableHeadColumn>} 
+                     <ST.TableHeadColumn>Nome</ST.TableHeadColumn> 
                      <ST.TableHeadColumn >Equipe</ST.TableHeadColumn> 
                      {admin && <ST.TableHeadColumn ></ST.TableHeadColumn>} 
                  </tr>
